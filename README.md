@@ -15,6 +15,7 @@ An exercise that uses Python to introduce basic AI concepts within 8-10 hours.
 <pre>
 conda create -n touching-ai python=3.11
 conda activate touching-ai
+pip install -q -U google-genai
 </pre>
 
 # Step 1. Talk to Gemini by API
@@ -40,3 +41,20 @@ Purpose: Create a Python program that takes user questions, forwards to Gemini v
   - Read: https://ai.google.dev/gemini-api/docs/structured-output
 * Challenge:
   - Create a program that takes a user's question, and limit the answer to 50 tokens. Try both ways: 1. Using additional requirement in prompt. 2. Using maxOutputTokens. See which is better.
+
+# Step 2. GenAI: Vector, embeddings, vector database
+Purpose: Learn the concept of vector and embeddings and their use.
+* Configuration
+<pre>
+pip install -U -q "google-genai>=1.0.0"
+pip install -q chromadb
+pip install pandas
+</pre>
+* Exercise:
+  - vector-similarity: Vector, Euclidean distance, Cosine similarity
+  - embeddings: Talk to Google API to encode text to embeddings.
+  - talk-to-pinecone
+  - driver
+     * Utils
+     * VectoDbPinecone
+  - 

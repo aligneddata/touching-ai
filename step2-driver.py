@@ -29,4 +29,4 @@ while True:
     print(response)
 
 
-vdb.delete_index(name="driver")
+vdb.vectorstore.delete_index(name="driver")

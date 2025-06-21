@@ -57,4 +57,7 @@ pip install pandas
   - driver
      * Utils
      * VectoDbPinecone
-  - 
+* Challange:
+  - Download an interesting book in text format, history, geo, or even fiction. Break it down to smaller chunks. Upload to an index in Pinecone.
+  - Make a program that accepts user's inquries. 
+  - Answer question: anything more we can do when the answer is "I DO NOT KNOW"?

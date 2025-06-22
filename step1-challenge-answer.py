@@ -29,4 +29,5 @@ while True:
         break
     
     response = ask_gemini("Answer this using less than 50 tokens: " + question)
+    # response = ask_gemini(question)
     print(response)

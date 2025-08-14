@@ -61,3 +61,18 @@ pip install pandas
   - Download an interesting book in text format, history, geo, or even fiction. Break it down to smaller chunks. Upload to an index in Pinecone.
   - Make a program that accepts user's inquries. 
   - Answer question: anything more we can do when the answer is "I DO NOT KNOW"?
+
+  # Step 4. Pytorch. Neural Network
+  * Concepts/Exercises:
+    - Pytorch tensor
+    - Gradient and backward()
+    - nn.Module and custom forward()
+    - Simple 1 layer network
+    - Dataset, split, dataloader, and general epoch structure
+    - Save and restore work
+    - Two layer network
+  * Configuration
+  <pre>
+  conda activate touching-ai
+  pip3 install torch torchvision
+  </pre>

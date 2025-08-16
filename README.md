@@ -79,3 +79,10 @@ Purpose: Use Google genai to upload a file to Gemini and ask questions related t
   conda activate touching-ai
   pip3 install torch torchvision
   </pre>
+
+# Step 5. 
+Purpose: Learn Gemini's function call.
+* Configuration
+<pre>
+pip install -q -U google-genai
+</pre>

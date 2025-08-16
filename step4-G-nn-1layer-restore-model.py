@@ -25,7 +25,7 @@ class SimpleNet(nn.Module):
 
 model = SimpleNet()
 model.load_state_dict(torch.load('simple_model_epoch_50.pth'))
-#model.eval()
+model.eval()  # Set the model to evaluation mode to disable dropout and batch normalization
 
 
 # Test the trained model

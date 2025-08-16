@@ -62,8 +62,11 @@ pip install pandas
   - Make a program that accepts user's inquries. 
   - Answer question: anything more we can do when the answer is "I DO NOT KNOW"?
 
-  # Step 4. Pytorch. Neural Network
-  * Concepts/Exercises:
+# Step 3. Google API for image/video/audio files
+Purpose: Use Google genai to upload a file to Gemini and ask questions related to the file. Demo image and video file.
+
+# Step 4. Pytorch. Neural Network
+ * Concepts/Exercises:
     - Pytorch tensor
     - Gradient and backward()
     - nn.Module and custom forward()

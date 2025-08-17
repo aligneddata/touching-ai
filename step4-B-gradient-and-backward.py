@@ -20,6 +20,17 @@ print("Gradient of c with respect to a:", a.grad)
 
 
 
+
+# --- another example ---
+x = torch.tensor(2.0, requires_grad=True)  # Track this tensor
+y = x ** 3                                  # y = x³
+
+y.backward()  # dy/dx = 3x² = 12 at x=2
+print(x.grad)  # tensor(12.)
+
+
+
+# --- two variables ---
 # Create tensors with gradient tracking
 x = torch.tensor(2.0, requires_grad=True)
 y = torch.tensor(3.0, requires_grad=True)
@@ -33,14 +44,5 @@ z.backward()  # dz/dx = 2x, dz/dy = 3y^2
 print(x.grad)  # 4.0
 print(y.grad)  # 27.0
 
-
-
-
-# --- another example ---
-x = torch.tensor(2.0, requires_grad=True)  # Track this tensor
-y = x ** 3                                  # y = x³
-
-y.backward()  # dy/dx = 3x² = 12 at x=2
-print(x.grad)  # tensor(12.)
 
 

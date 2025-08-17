@@ -20,7 +20,7 @@ class MyModel(nn.Module):
         return x
 
 model = MyModel()
-x = torch.rand(3, 4)
+x = torch.rand(3, 4)  # or: ones(3, 4), zeros(3, 4)
 print("x:", x)
 y = model(x)  # Calls forward() internally
 print("y:", y)

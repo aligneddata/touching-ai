@@ -8,6 +8,9 @@ import torch.nn as nn
 import numpy as np
 
 
+# #dim == #[s
+# size = #,s + 1 except for 1dim
+
 # 1 dim; size 4
 n = np.array([1.0, 2.0, 3.0, 4.0])
 print(n.shape, n, n.dtype)

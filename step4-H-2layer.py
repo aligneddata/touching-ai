@@ -11,7 +11,7 @@ import torch.optim as optim
 # Define a two-layer model
 class MoreComplexNet(nn.Module):
     def __init__(self):
-        super(MoreComplexNet, self).__init__()
+        super().__init__()
         # First linear layer: 2 input features -> 4 hidden features
         self.linear1 = nn.Linear(2, 4)
         # Activation function to introduce non-linearity

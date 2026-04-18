@@ -12,7 +12,7 @@ import torch.optim as optim
 # Define a simple linear model
 class SimpleNet(nn.Module):
     def __init__(self):
-        super(SimpleNet, self).__init__()
+        super().__init__()  # python 2 style: super(SimpleNet, self).__init__()
         # 1 layer with 1 node - output = input * W + b
         # W (the weight of the linear layer) is a (1, 1) tensor.
         # b (the bias of the linear layer) is a (1, 1) tensor.

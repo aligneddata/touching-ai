@@ -24,21 +24,24 @@ print("n",[i for i in n],type(n))
 # more sophisticated data
 class MyDataset(Dataset):
     def __init__(self, length):
-        # Store as 2D float32 tensors for compatibility with DataLoader batching and model input
-        self._x_raw = [torch.tensor([i], dtype=torch.float32) for i in range(length)]
-        self._y_raw = [torch.tensor([3*i], dtype=torch.float32) for i in range(length)]
+        # Store as single tensors rather than lists of tensors.
+        # This is more memory-efficient and faster for indexing.
+        self._x_raw = torch.arange(length, dtype=torch.float32).view(-1, 1)
+        self._y_raw = self._x_raw * 3
 
     def __len__(self):
-        return len(self._x_raw)
+        return self._x_raw.size(0)
 
     def __getitem__(self, idx):
+        # Indexing into a single large tensor
         x = self._x_raw[idx]
         y = self._y_raw[idx]
         return x, y
     
     def print_data(self):
-        for x, y in zip(self._x_raw, self._y_raw):
-            print(f"x = {x}, y = {y}")
+        print(f"X shape: {self._x_raw.shape}, Y shape: {self._y_raw.shape}")
+        for i in range(len(self)):
+            print(f"Index {i}: X={self._x_raw[i].item()}, Y={self._y_raw[i].item()}")
 
 
 # Main
@@ -56,7 +59,7 @@ test_dataloader = torch.utils.data.DataLoader(test_dataset, batch_size=4, shuffl
 # Setup model 
 class SimpleNet(nn.Module):
     def __init__(self):
-        super(SimpleNet, self).__init__()
+        super().__init__()
         self.linear = nn.Linear(1, 1) # Input dim == 1; Output dim == 1
 
     def forward(self, x):
@@ -75,7 +78,8 @@ print("\nTraining a simple neural network:")
 # 4. The training loop: get X and Y from the Subset and perform calculations
 num_epochs = 5
 for epoch in range(num_epochs):
-    # Iterate over the DataLoader for the Subset
+    model.train() # Set to training mode
+    
     for X_batch, Y_batch in train_dataloader:
         print("On loop: epoch->training batch")
         # X_batch = X_batch.float()  # Ensure input is float32
